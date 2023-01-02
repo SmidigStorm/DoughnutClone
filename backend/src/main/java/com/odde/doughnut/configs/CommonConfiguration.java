@@ -10,10 +10,10 @@ public class CommonConfiguration {
   void commonConfig(
       HttpSecurity http, AbstractAuthenticationFilterConfigurer authenticationFilterConfigurer)
       throws Exception {
-    http.authorizeRequests()
-        .mvcMatchers("/robots.txt")
+    http.authorizeHttpRequests()
+        .requestMatchers("/robots.txt")
         .permitAll()
-        .antMatchers(
+        .requestMatchers(
             "/",
             "/login",
             "/error",
